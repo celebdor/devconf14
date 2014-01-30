@@ -80,13 +80,32 @@
                                     <h2>Networking</h2>
                                     <h3>Allowed configurations over physical device</h3>
 
-                                    <td><object type="image/svg+xml" data="svg/vm_nets.svg"></object></td>
+                                    <object type="image/svg+xml" data="svg/vm_nets.svg"></object>
 
                                     <aside class="notes">
                                         <p>Multiple bridged or bridgeless vlanned networks with a single bridge-less non vlanned network.</p>
                                         <p>Single non-vlanned bridged network</p>
                                     </aside>
 				</section>
+                                <section>
+                                    <section>
+                                        <h2>VDSM networking modules</h2>
+                                        <object type="image/svg+xml" data="svg/modules.svg"></object>
+
+                                        <aside class="notes">
+                                            <p>Define setupNetworks path.</p>
+                                            <p>Define getCaps path.</p>
+                                            <p>Introduce configurators.</p>
+                                        </aside>
+                                    </section>
+                                    <section>
+                                        <object type="image/svg+xml" data="svg/net_modules.svg"></object>
+
+                                        <aside class="notes">
+                                            <p>explain library usage.</p>
+                                        </aside>
+                                    </section>
+                                </section>
 				<section>
                                     <h2>VDSM networking API</h2>
                                     <ul>
@@ -156,6 +175,56 @@ for network, data in setup_nets_config['request']['networks'].items():
                                             </ul>
                                         </li>
                                     </ul>
+                                </section>
+                                <section>
+                                    <section>
+                                        <h2>VM networking Hooks</h2>
+                                        <ul>
+                                            <li> before_nic_hotplug </li>
+                                            <li> after_nic_hotplug </li>
+                                            <li> after_nic_hotplug_fail </li>
+                                            <p/>
+                                            <li> before_nic_hotunplug </li>
+                                            <li> after_nic_hotunplug </li>
+                                            <li> after_nic_hotunplug_fail </li>
+                                            <p/>
+                                            <li> before_device_create </li>
+                                            <li> after_device_create</li>
+                                            <p/>
+                                            <li> before_device_destroy </li>
+                                            <li> after_device_destroy</li>
+                                            <p/>
+                                            <li> before_update_device </li>
+                                            <li> after_update_device </li>
+                                            <li> after_update_device_fail </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Example that overrides vnic net</h2>
+                                        <pre><code class="python">
+#!/usr/bin/env python
+import hooking, os, sys, xml.dom
+
+libvirt_net = os.environ.get('extnet')
+if libvirt_net is not None:
+    doc_xml = hooking.read_domxml()
+    vnic_xml, = doc_xml.getElementsByTagName('interface')
+
+    # Replace net from vnic xml
+    source, = vnic_xml.getElementsByTagName('source')
+    source.removeAttribute('bridge')
+    source.setAttribute('network', libvirt_net)
+    vnic_xml.setAttribute('type', 'network')
+
+    hooking.write_domxml(doc)  # Write back the xml to be picked up by vdsm
+                                        </code></pre>
+                                        <aside class="notes">
+                                            <p>This could be used in:</p>
+                                            <ul>
+                                                <li>before_device_create</li>
+                                                <li>before_nic_hotplug</li>
+                                            </ul>
+                                        </aside>
                                 </section>
 
                                 <!--Rest of doc is a remainder of reveal.js examples-->
