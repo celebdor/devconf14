@@ -1,22 +1,25 @@
 {
-  "name": "OpenShift-Sample-App",
-  "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "name": "VDSM-pluggable-networking",
+  "version": "0.1.0",
+  "description": "Devconf.cz 2014 presentation about VDSM networking extension",
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "openshift",
+    "networking",
+    "vdsm",
+    "oVirt"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Antoni Segura Puimedon",
+    "email": "asegurap@redhat.com",
+    "url": "http://blog.antoni.me"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://blog.antoni.me",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/celebdor/devconf14"
   },
 
   "engines": {
@@ -25,9 +28,23 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "express": "~3.4.4",
+    "underscore": "~1.5.1",
+    "express": "~2.5.9",
+    "mustache": "~0.7.2",
+    "socket.io": "~0.9.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-qunit": "~0.2.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-cssmin": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-contrib-connect": "~0.4.1",
+    "grunt-zip": "~0.7.0",
+    "grunt": "~0.4.0"
+  },
   "bundleDependencies": [],
 
   "private": true,
