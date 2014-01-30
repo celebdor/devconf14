@@ -246,25 +246,52 @@ if libvirt_net is not None:
                                         <ul>
                                             <li>Apply network configuration to the system</li>
                                             <li>Its methods operate on network device objects</li>
-                                            <li>Have to provide the following API:
-                                            <ul>
-                                                <li>configureBridge</li>
-                                                <li>configureBond</li>
-                                                <li>configureVlan</li>
-                                                <li>configureNic</li>
-                                                <li>configureSourceRoute</li>
-                                                <p/>
-                                                <li>editBonding</li>
-                                                <p/>
-                                                <li>removeBridge</li>
-                                                <li>removeBond</li>
-                                                <li>removeVlan</li>
-                                                <li>removeNic</li>
-                                                <li>removeSourceRoute</li>
-                                                <p/>
-                                                <li>flush</li>
-                                            </ul>
+                                            <li class="fragment" data-fragment-index="1">Advantages:
+                                                <ul>
+                                                    <li>Using different networking systems</li>
+                                                    <li>Supporting multiple distributions</li>
+                                                    <li>Gives fine grained control of conf application</li>
+                                                </ul>
                                             </li>
+                                            <li class="fragment" data-fragment-index="2">Pain points:
+                                                <ul>
+                                                    <li>Each configurator can have different persistence semantics</li>
+                                                    <li>Dealing with transactions</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Mandatory API</h2>
+                                        <ul>
+                                            <li>begin</li>
+                                            <p/>
+                                            <li>configureBridge</li>
+                                            <li>configureBond</li>
+                                            <li>configureVlan</li>
+                                            <li>configureNic</li>
+                                            <li>configureSourceRoute</li>
+                                            <p/>
+                                            <li>editBonding</li>
+                                            <p/>
+                                            <li>removeBridge</li>
+                                            <li>removeBond</li>
+                                            <li>removeVlan</li>
+                                            <li>removeNic</li>
+                                            <li>removeSourceRoute</li>
+                                            <p/>
+                                            <li>flush</li>
+                                            <p/>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Optional API</h2>
+                                        <ul>
+                                            <li>configureLibvirtNetwork</li>
+                                            <li>removeLibvirtNetwork</li>
+                                            <p/>
+                                            <li>rollback</li>
+                                            <li>removeLibvirtNetwork</li>
                                         </ul>
                                     </section>
                                     <section>
@@ -272,7 +299,7 @@ if libvirt_net is not None:
                                         <object type="image/svg+xml" data="svg/configurator_call_flow.svg"></object>
                                     </section>
                                     <section>
-                                        <h2>configureVlan example</h2>
+                                        <h2>configure Vlan example</h2>
                                         <pre><code class="python">
 def configureVlan(self, vlan, **opts):
     vlan.device.configure(**opts)
@@ -290,6 +317,28 @@ def configureVlan(self, vlan, **opts):
     if vlan.ipConfig.bootproto == 'dhcp':
         DhcpClient(vlan.name).start(vlan.ipConfig.async)
                                         </code></pre>
+                                    </section>
+                                </section>
+
+                                <section>
+                                    <section>
+                                        <h2>Unified persistence: Addressing Configurator pain points</h2>
+                                        <ul>
+                                            <li>Abstracts away the network configuration persistence</li>
+                                            <li>Deals with transactionality</li>
+                                            <li>File system based</li>
+                                            <li>Introduces:
+                                                <ul>
+                                                    <li>Running Config</li>
+                                                    <li>Persistent Config</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Transaction flow</h2>
+                                        <h3>TODO: Replace this graph with the proper one</h3>
+                                        <object type="image/svg+xml" data="svg/configurator_call_flow.svg"></object>
                                     </section>
                                 </section>
 
