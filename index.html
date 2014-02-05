@@ -37,7 +37,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-                                    <object type="image/svg+xml" data="svg/oVirt_logo.svg"></object>
+                                    <object type="image/svg+xml" data="svg_clean/oVirt_logo.svg" height="275em"></object>
                                     <h3>VDSM pluggable networking</h3>
                                     <p>
                                             <small>Created by <a href="http://blog.antoni.me">Antoni Segura Puimedon</a> / <a href="http://twitter.com/@celebdor">@celebdor</a></small>
@@ -57,7 +57,7 @@
 				<section>
                                     <h2>Architecture</h2>
 
-                                    <object type="image/svg+xml" data="svg/oVirt_arch.svg"></object>
+                                    <object type="image/svg+xml" data="svg_clean/oVirt_arch.svg"></object>
 
                                     <aside class="notes">
                                         <p>VDSM gathers network information and applies network definitions.</p>
@@ -68,7 +68,7 @@
                                     <h2>Architecture</h2>
                                     <h3>Communication</h3>
 
-                                    <object type="image/svg+xml" data="svg/oVirt_comm.svg"></object>
+                                    <object type="image/svg+xml" data="svg_clean/oVirt_comm.svg" height="500em"></object>
 
                                     <aside class="notes">
                                         <p>The engine sends XML RPC requests to its hypervisor nodes' VDSM.</p>
@@ -80,7 +80,7 @@
                                     <h2>Networking</h2>
                                     <h3>Allowed configurations over physical device</h3>
 
-                                    <object type="image/svg+xml" data="svg/vm_nets.svg"></object>
+                                    <object type="image/svg+xml" data="svg_clean/vm_nets.svg" height="500em"></object>
 
                                     <aside class="notes">
                                         <p>Multiple bridged or bridgeless vlanned networks with a single bridge-less non vlanned network.</p>
@@ -90,7 +90,7 @@
                                 <section>
                                     <section>
                                         <h2>VDSM networking modules</h2>
-                                        <object type="image/svg+xml" data="svg/modules.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/modules.svg"></object>
 
                                         <aside class="notes">
                                             <p>Define setupNetworks path.</p>
@@ -99,7 +99,7 @@
                                         </aside>
                                     </section>
                                     <section>
-                                        <object type="image/svg+xml" data="svg/net_modules.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/net_modules.svg" height="680em"></object>
 
                                         <aside class="notes">
                                             <p>explain library usage.</p>
@@ -222,7 +222,7 @@ if libvirt_net is not None:
     source.setAttribute('network', libvirt_net)
     vnic_xml.setAttribute('type', 'network')
 
-    hooking.write_domxml(doc)  # Write back the xml to be picked up by vdsm
+    hooking.write_domxml(doc)  # Write back the xml for vdsm/libvirt
                                         </code></pre>
                                         <aside class="notes">
                                             <p>This could be used in:</p>
@@ -301,7 +301,7 @@ if libvirt_net is not None:
                                     </section>
                                     <section>
                                         <h2>Configurator flow</h2>
-                                        <object type="image/svg+xml" data="svg/configurator_call_flow.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/configurator_call_flow.svg"></object>
                                     </section>
                                     <section>
                                         <h2>configure Vlan example</h2>
@@ -360,22 +360,22 @@ def configureVlan(self, vlan, **opts):
                                     </section>
                                     <section>
                                         <h2>Creation flow</h2>
-                                        <object type="image/svg+xml" data="svg/unified_setupsafe_flow.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/unified_setupsafe_flow.svg"></object>
                                     </section>
                                     <section>
                                         <h2>Reboot flow</h2>
-                                        <object type="image/svg+xml" data="svg/unified_reboot_flow.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/unified_reboot_flow.svg"></object>
                                     </section>
                                     <section>
                                         <h2>Restore flow</h2>
-                                        <object type="image/svg+xml" data="svg/unified_restore_flow.svg"></object>
+                                        <object type="image/svg+xml" data="svg_clean/unified_restore_flow.svg"></object>
                                     </section>
                                 </section>
 
                                 <!--The end-->
 				<section>
                                     <h2>Join us</h2>
-                                    <object type="image/svg+xml" data="svg/oVirt_logo.svg"></object>
+                                    <object type="image/svg+xml" data="svg_clean/oVirt_logo.svg" height="200em"></object>
                                     <h3><a href="http://gerrit.ovirt.org">http://gerrit.ovirt.org</a></h3>
                                     <h3>#ovirt@oftc.net</h3>
                                     <h3>#vdsm@irc.freenode.net</h3>
