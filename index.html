@@ -48,7 +48,7 @@
                                     ## What is VDSM?
 
                                     * oVirt's hypervisor node controller
-                                    * Exposes XML RPC API for controlling nodes':
+                                    * Exposes XML RPC API for controlling nodes:
                                         1. Virtualization
                                         2. **Networking**
                                         3. Storage
@@ -114,7 +114,6 @@
                                             <ul>
                                                 <li>setupNetworks<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span><span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
                                                 <li>setSafeNetworkConfig<span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
-                                                <li>editNetwork<span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
                                                 <li>getVdsCapabilities</li>
                                             </ul>
                                         </li>
@@ -124,6 +123,7 @@
                                                 <li>hotplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
                                                 <li>hotunplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
                                                 <li>vmUpdateDevice<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
+                                                <li>getVmStats</li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -135,7 +135,7 @@
                                     <ul>
                                         <li>Scripts installed to /usr/libexec/vdsm/hooks/</li>
                                         <li>Multiple scripts per hooking point (sorted by priority)</li>
-                                        <li>Can be written in any programming language</li>
+                                        <li>Can be written in any programming language (<strong>Python</strong>)</li>
                                         <li>IO via environment variables and files</li>
                                         <li>XML and JSON file interface</li>
                                         <li>Placed before and after API calls to extend VDSM</li>
@@ -250,12 +250,12 @@ if libvirt_net is not None:
                                         <h2>Configurators</h2>
                                         <ul>
                                             <li>Apply network configuration to the system</li>
-                                            <li>Its methods operate on network device objects</li>
+                                            <li>Operates on network device objects</li>
                                             <li class="fragment" data-fragment-index="1">Advantages:
                                                 <ul>
                                                     <li>Using different networking systems</li>
                                                     <li>Supporting multiple distributions</li>
-                                                    <li>Gives fine grained control of conf application</li>
+                                                    <li>Controlling each step of the network configuration</li>
                                                 </ul>
                                             </li>
                                             <li class="fragment" data-fragment-index="2">Pain points:
@@ -352,7 +352,7 @@ def configureVlan(self, vlan, **opts):
                                         <h2>Running Configuration</h2>
                                         <ul>
                                             <li>On tmpfs: <strong>/var/run/vdsm/netconf/{nets,bonds}</strong></li>
-                                            <li>Exact vdsm-set network and bond state</li>
+                                            <li>Exact vdsm network and bond state</li>
                                             <li>Written on successful network operation</li>
                                             <li>Can be persisted atomically by setSafeNetworkConfig</li>
                                         </ul>
@@ -363,6 +363,7 @@ def configureVlan(self, vlan, **opts):
                                             <li>On: <strong>/var/lib/vdsm/persistence/netconf/{nets,bonds}</strong></li>
                                             <li>Configuration to roll back to when rebooting or restoring connectivity</li>
                                             <li>netconf is a link to the latest snapshot copied from Running Configuration</li>
+                                            <li>Allows recovery from wrong configurations</li>
                                         </ul>
                                     </section>
                                     <section>
@@ -371,6 +372,7 @@ def configureVlan(self, vlan, **opts):
                                     </section>
                                     <section>
                                         <h2>Reboot flow</h2>
+                                        <h3>TODO: Add columns. Make arrows bigger</h3>
                                         <object type="image/svg+xml" data="svg_clean/unified_reboot_flow.svg"></object>
                                     </section>
                                     <section>
@@ -389,8 +391,8 @@ def configureVlan(self, vlan, **opts):
                                         </li>
                                         <li>Missing configurator work</li>
                                             <ul>
-                                                <li>Have configurator like extension points for netinfo</li>
-                                                <li>Straight Netlink configurator (in progress)</li>
+                                                <li>Have configurator-like extension points for netinfo</li>
+                                                <li>Straight-to-Netlink configurator (in progress)</li>
                                                 <li>Team configurator</li>
                                                 <li>Your configurator</li>
                                             </ul>
