@@ -327,12 +327,30 @@ def configureVlan(self, vlan, **opts):
                                             <li>Abstracts away the network configuration persistence</li>
                                             <li>Deals with transactionality</li>
                                             <li>File system based</li>
+                                            <li>One JSON file per each network and/or bond</li>
                                             <li>Introduces:
                                                 <ul>
-                                                    <li>Running Config</li>
-                                                    <li>Persistent Config</li>
+                                                    <li>Running Configuration</li>
+                                                    <li>Persistent Configuration</li>
                                                 </ul>
                                             </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Running Configuration</h2>
+                                        <ul>
+                                            <li>On tmpfs: <strong>/var/run/vdsm/netconf/{nets,bonds}</strong></li>
+                                            <li>Exact vdsm-set network and bond state</li>
+                                            <li>Written on successful network operation</li>
+                                            <li>Can be persisted atomically by setSafeNetworkConfig</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Persistent Configuration</h2>
+                                        <ul>
+                                            <li>On: <strong>/var/lib/vdsm/persistence/netconf/{nets,bonds}</strong></li>
+                                            <li>Configuration to roll back to when rebooting or restoring connectivity</li>
+                                            <li>netconf is a link to the latest snapshot copied from Running Configuration</li>
                                         </ul>
                                     </section>
                                     <section>
