@@ -143,15 +143,26 @@
                                 </section>
 
                                 <section>
-                                    <h2>Host networking Hooks</h2>
-                                    <ul>
-                                        <li>
-                                            <strong>before_network_setup</strong>
-                                            <ul>
-                                                <li>Input: JSON of setupNetworks API command (nets and bonds definitions)</li>
-                                                <li>Output: JSON dump of network and bonding definitions for setupNetworks to apply</li>
-                                            </ul>
-                                        </li>
+                                    <section>
+                                        <h2>Host networking Hooks</h2>
+                                        <ul>
+                                            <li>
+                                                <strong>before_network_setup</strong>
+                                                <ul>
+                                                    <li>Input: JSON of setupNetworks API command (nets and bonds definitions)</li>
+                                                    <li>Output: JSON dump of network and bonding definitions for setupNetworks to apply</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>after_network_setup</strong>
+                                                <ul>
+                                                    <li>Input: JSON of what was set for setupNetworks to apply</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Example that integrates with journald</h2>
                                         <pre><code class="python">
 #!/usr/bin/env python
 from systemd import journal
@@ -169,13 +180,7 @@ for network, data in setup_nets_config['request']['networks'].items():
         journal.send('VDSM to configure network %s' % network,
                      NEWNET=network in networks, DEF=str(data))
                                         </code></pre>
-                                        <li>
-                                            <strong>after_network_setup</strong>
-                                            <ul>
-                                                <li>Input: JSON of what was set for setupNetworks to apply</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    </section>
                                 </section>
                                 <section>
                                     <section>
@@ -354,9 +359,16 @@ def configureVlan(self, vlan, **opts):
                                         </ul>
                                     </section>
                                     <section>
-                                        <h2>Transaction flow</h2>
-                                        <h3>TODO: Replace this graph with the proper one</h3>
-                                        <object type="image/svg+xml" data="svg/configurator_call_flow.svg"></object>
+                                        <h2>Creation flow</h2>
+                                        <object type="image/svg+xml" data="svg/unified_setupsafe_flow.svg"></object>
+                                    </section>
+                                    <section>
+                                        <h2>Reboot flow</h2>
+                                        <object type="image/svg+xml" data="svg/unified_reboot_flow.svg"></object>
+                                    </section>
+                                    <section>
+                                        <h2>Restore flow</h2>
+                                        <object type="image/svg+xml" data="svg/unified_restore_flow.svg"></object>
                                     </section>
                                 </section>
 
@@ -387,7 +399,7 @@ def configureVlan(self, vlan, **opts):
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
