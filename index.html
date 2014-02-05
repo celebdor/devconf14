@@ -323,6 +323,13 @@ def configureVlan(self, vlan, **opts):
         DhcpClient(vlan.name).start(vlan.ipConfig.async)
                                         </code></pre>
                                     </section>
+                                    <section>
+                                        <h2>Shipped configurators</h2>
+                                        <ul>
+                                            <li>ifcfg (Fedora, el6)</li>
+                                            <li>iproute2</li>
+                                        </ul>
+                                    </section>
                                 </section>
 
                                 <section>
@@ -372,6 +379,24 @@ def configureVlan(self, vlan, **opts):
                                     </section>
                                 </section>
 
+				<section>
+                                    <h2>Future work</h2>
+                                    <ul>
+                                        <li>Missing hooks work
+                                            <ul>
+                                                <li>before_returning_capabilites</li>
+                                            </ul>
+                                        </li>
+                                        <li>Missing configurator work</li>
+                                            <ul>
+                                                <li>Have configurator like extension points for netinfo</li>
+                                                <li>Straight Netlink configurator (in progress)</li>
+                                                <li>Team configurator</li>
+                                                <li>Your configurator</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+				</section>
                                 <!--The end-->
 				<section>
                                     <h2>Join us</h2>
