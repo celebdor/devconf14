@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 				'images/**',
 				'plugin/**',
                                 'png/**',
-                                'svg/**'
+                                'svg_clean/**'
 			]
 		},
 
