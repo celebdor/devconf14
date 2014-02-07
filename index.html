@@ -169,7 +169,7 @@ from systemd import journal
 from vdsm import netinfo
 import json, os, sys
 
-with open(os.environ['_hooks_json']) as data_file:
+with open(os.environ['_hook_json']) as data_file:
     setup_nets_config = json.load(data_file)
 
 networks = netinfo.networks()  # Current nets
