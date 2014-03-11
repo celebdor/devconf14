@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>VDSM pluggable networking</title>
+		<title>VDSM networking</title>
 
-		<meta name="description" content="Devconf.cz 2014 presentation about extending oVirt networking.">
+		<meta name="description" content="oVirt's vdsm networking.">
 		<meta name="author" content="Antoni Segura Puimedon">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -38,43 +38,10 @@
 			<div class="slides">
 				<section>
                                     <object type="image/svg+xml" data="svg_clean/oVirt_logo.svg" height="275em"></object>
-                                    <h3>VDSM pluggable networking</h3>
+                                    <h3>VDSM networking</h3>
                                     <p>
                                             <small>Created by <a href="http://blog.antoni.me">Antoni Segura Puimedon</a> / <a href="http://twitter.com/@celebdor">@celebdor</a></small>
                                     </p>
-				</section>
-
-				<section data-markdown>
-                                    ## What is VDSM?
-
-                                    * oVirt's hypervisor node controller
-                                    * Exposes XML RPC API for controlling nodes:
-                                        1. Virtualization
-                                        2. **Networking**
-                                        3. Storage
-                                    * Python 2
-				</section>
-				<section>
-                                    <h2>Architecture</h2>
-
-                                    <object type="image/svg+xml" data="svg_clean/oVirt_arch.svg"></object>
-
-                                    <aside class="notes">
-                                        <p>VDSM gathers network information and applies network definitions.</p>
-                                        <p>oVirt-engine aggregates node information and issues calls to VDSM.</p>
-                                    </aside>
-				</section>
-				<section>
-                                    <h2>Architecture</h2>
-                                    <h3>Communication</h3>
-
-                                    <object type="image/svg+xml" data="svg_clean/oVirt_comm.svg" height="500em"></object>
-
-                                    <aside class="notes">
-                                        <p>The engine sends XML RPC requests to its hypervisor nodes' VDSM.</p>
-                                        <p>VDSM processes the requests executes the actions and returns status
-                                        message and code.</p>
-                                    </aside>
 				</section>
 				<section>
                                     <h2>Networking</h2>
@@ -107,26 +74,42 @@
                                     </section>
                                 </section>
 				<section>
-                                    <h2>VDSM networking API</h2>
-                                    <ul>
-                                        <li class="fragment" data-fragment-index="1">
-                                            <strong>Host networking</strong>
-                                            <ul>
-                                                <li>setupNetworks<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span><span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
-                                                <li>setSafeNetworkConfig<span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
-                                                <li>getVdsCapabilities</li>
-                                            </ul>
-                                        </li>
-                                        <li class="fragment" data-fragment-index="2">
-                                            <strong>VM networking</strong>
-                                            <ul>
-                                                <li>hotplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                <li>hotunplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                <li>vmUpdateDevice<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                <li>getVmStats</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <section>
+                                        <h2>VDSM networking API</h2>
+                                        <ul>
+                                            <li class="fragment" data-fragment-index="1">
+                                                <strong>Host networking</strong>
+                                                <ul>
+                                                    <li>setupNetworks<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span><span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
+                                                    <li>setSafeNetworkConfig<span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
+                                                    <li>getVdsCapabilities</li>
+                                                </ul>
+                                            </li>
+                                            <li class="fragment" data-fragment-index="2">
+                                                <strong>VM networking</strong>
+                                                <ul>
+                                                    <li>hotplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
+                                                    <li>hotunplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
+                                                    <li>vmUpdateDevice<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
+                                                    <li>getVmStats</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>setupNetworks</h2>
+                                        <pre><code class="json">
+{'red': {'bonding': 'bond0', 'vlan': '3', 'STP': 'no', 'bridged': 'true'}},
+{'bond0': {'nics': ['eth2', 'eth1'], 'options': 'mode=4'} },
+{'connectivityCheck': 'true', 'connectivityTimeout': 120}
+                                        </code></pre>
+                                        <pre><code class="json">
+{'black': {'nic': 'eth3', 'vlan': '4', 'STP': 'no', 'bridged': 'true'},
+ 'green': {'nic': 'eth3', 'vlan': '5', 'STP': 'no', 'bridged': 'true'}},
+{},
+{'connectivityCheck': 'true', 'connectivityTimeout': 120}
+                                        </code></pre>
+                                    </section>
 				</section>
 
                                 <!--Hooks section. Description and listing of the networking hook endpoints. EXAMPLES!!!-->
@@ -382,28 +365,15 @@ def configureVlan(self, vlan, **opts):
 				<section>
                                     <h2>Future work</h2>
                                     <ul>
-                                        <li>Missing hooks work
-                                            <ul>
-                                                <li>before_returning_capabilites</li>
-                                            </ul>
-                                        </li>
-                                        <li>Missing configurator work</li>
-                                            <ul>
-                                                <li>Have configurator-like extension points for netinfo</li>
-                                                <li>Straight-to-Netlink configurator (in progress)</li>
-                                                <li>Team configurator</li>
-                                                <li>Your configurator</li>
-                                            </ul>
-                                        </li>
+                                        <li>Ask Danken in the next presentation</li>
                                     </ul>
 				</section>
                                 <!--The end-->
 				<section>
-                                    <h2>Join us</h2>
+                                    <h2>Questions</h2>
                                     <object type="image/svg+xml" data="svg_clean/oVirt_logo.svg" height="200em"></object>
-                                    <h3><a href="http://gerrit.ovirt.org">http://gerrit.ovirt.org</a></h3>
-                                    <h3>#ovirt@oftc.net</h3>
-                                    <h3>#vdsm@irc.freenode.net</h3>
+                                    <h3><a href="http://gerrit.ovirt.org/#/q/project:vdsm,n,z">http://gerrit.ovirt.org/#/q/project:vdsm,n,z</a></h3>
+                                    <h3>apuimedo/celebdor @ #vdsm@irc.freenode.net</h3>
 				</section>
 
 			</div>
