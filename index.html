@@ -77,15 +77,158 @@
                                     <li>Typically disposable VMs</li>
                                 </ul>
                             </p>
-                                    <aside class="notes">
-                                        <p>Although there are some patches to enable Xen ;-)</p>
-                                    </aside>
+                            <aside class="notes">
+                                <p>Although there are some patches to enable Xen ;-)</p>
+                            </aside>
                         </section>
                         <section>
                             <object type="image/svg+xml" data="svg_clean/openstack_arch.svg"></object>
                         </section>
                         <section>
                             <object type="image/svg+xml" data="svg_clean/openstack_arch_selected.svg"></object>
+                        </section>
+				</section>
+				<section>
+                        <section>
+                            <object type="image/svg+xml" data="svg_clean/glance_logo.svg" height="400em"></object><h2>Image Service - Glance</h2>
+                        </section>
+                        <section>
+                            <h2>Introduction</h2>
+                            <p>
+                                <ul>
+                                    <li>Virtual disk images services:
+                                        <ul>
+                                            <li>discovery</li>
+                                            <li>registration</li>
+                                            <li>delivery</li>
+                                        </ul>
+                                    </li>
+                                    <li>RESTful API for metadata and image retrieval</li>
+                                    <li>Varied backing storage possibilities:
+                                        <ul>
+                                            <li>local fs</li>
+                                            <li>Swift</li>
+                                            <li>S3</li>
+                                            <li>rbd</li>
+                                            <li>cinder</li>
+                                            <li>vsphere</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </section>
+                        <section>
+                            <h2>Formats</h2>
+                            <p>
+                                <ul>
+                                    <li>Virtual disk formats:
+                                        <ul>
+                                            <li>raw</li>
+                                            <li>qcow2 - qemu</li>
+                                            <li>vdi - VirtualBox, qemu</li>
+                                            <li>iso</li>
+                                            <li>vhd, vmdk - MS, VMware, Xen</li>
+                                            <li>aki, ari, ami - Amazon</li>
+                                        </ul>
+                                    </li>
+                                    <li>Container formats (with VM metadata):
+                                        <ul>
+                                            <li>bare (no metadata)</li>
+                                            <li>ovf</li>
+                                            <li>aki, ari, ami - Amazon</li>
+                                            <li>ova (tarred ovf)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </section>
+                        <section>
+                            <h2>oVirt current use cases</h2>
+                            <p>
+                                <ul>
+                                    <li>Import/Export disk images/templates</li>
+                                    <li>Backing up unlimited amount of VM disks</li>
+                                </ul>
+                            </p>
+                        </section>
+                        <section>
+                            <h2>oVirt future use cases</h2>
+                            <p>
+                                <ul>
+                                    <li>Store ISOs and use them natively in oVirt VMs</li>
+                                    <li>Import/Export full VMs/templates with:
+                                        <ul>
+                                            <li>Complete VM definition</li>
+                                            <li>Multiple disks</li>
+                                            <li>Snapshots</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                        </section>
+                        <section>
+                            <h2>Connecting to oVirt</h2>
+                            <img src="png/add_glance_provider_small.png"/>
+                        </section>
+                        <section>
+                            <h2>Image discovery</h2>
+                            <img src="png/discovery_glance_provider_small.png"/>
+                        </section>
+                        <section>
+                            <h2>Image importing</h2>
+                            <img src="png/import_image_dialog.png"/>
+                            <aside class="notes">
+                                <p>Note the addition of "Import as Template"</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <object type="image/svg+xml" data="svg_clean/oVirt_glance_communication.svg"></object>
+                        </section>
+                        <section>
+                            <h2>Image importing</h2>
+                            <img src="png/import_image_result.png"/>
+                            <aside class="notes">
+                                <p>Note the retrieved description from metadata</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <h2>Image exporting</h2>
+                            <img src="png/export_image_dialog.png"/>
+                        </section>
+                        <section>
+                            <h2>Image exporting</h2>
+                            <img src="png/export_image_result.png"/>
+                            <aside class="notes">
+                                <p>Note the size</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <h2>Current limitations</h2>
+                            <p>
+                                <ul>
+                                    <li>Not possible to export with multiple volumes
+                                        <ul>
+                                            <li>Snapshotted disks</li>
+                                            <li>Thin-provisioned over a template</li>
+                                        </ul>
+                                    </li>
+                                    <li>No live VM export</li>
+                                    <li>No raw image sparseness supported</li>
+                                    <li>No image download resuming capability</li>
+                                </ul>
+                            </p>
+                        </section>
+                        <section>
+                            <h2>Future</h2>
+                            <p>
+                                <ul>
+                                    <li>Delete images</li>
+                                    <li>online snapshot squashing</li>
+                                    <li>Integrated WebUI upload/download</li>
+                                    <li>Consume ISOs natively</li>
+                                    <li>Full VM import/export</li>
+                                </ul>
+                            </p>
                         </section>
 				</section>
 				<section>
