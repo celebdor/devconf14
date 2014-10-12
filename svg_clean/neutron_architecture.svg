@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="900"
+   height="600"
+   id="svg3345"
+   version="1.1"
+   inkscape:version="0.91pre0 r13343"
+   viewBox="0 0 900 600.00001"
+   sodipodi:docname="neutron_architecture.svg">
+  <defs
+     id="defs3347" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="317.94885"
+     inkscape:cy="296.33776"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3361" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3350">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-452.36219)">
+    <rect
+       style="opacity:0.59839358;fill:#5f98e2;fill-opacity:1;stroke:#000000;stroke-width:1.04343283;stroke-opacity:1"
+       id="rect3355"
+       width="183.38557"
+       height="59.481304"
+       x="77.612305"
+       y="927.47021"
+       rx="5.0870762"
+       ry="4.037662" />
+    <rect
+       style="opacity:0.59839358;fill:#587900;fill-opacity:1;stroke:#000000;stroke-width:0.8726061;stroke-opacity:1"
+       id="rect3357"
+       width="183.5564"
+       height="442.98456"
+       x="350.94504"
+       y="544.01276"
+       rx="3.5541325"
+       ry="4.0417724" />
+    <rect
+       style="opacity:0.59839358;fill:#5f98e2;fill-opacity:1;stroke:#000000;stroke-width:1.04295635;stroke-opacity:1"
+       id="rect3359"
+       width="183.38605"
+       height="372.81418"
+       x="77.66433"
+       y="544.09796"
+       rx="5.0793056"
+       ry="4.0401444" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.88103104px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="90.911201"
+       y="968.75421"
+       id="text4730"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732"
+         x="90.911201"
+         y="968.75421"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">EXTENSIONS</tspan></text>
+    <g
+       id="g5235"
+       transform="translate(14,0)">
+      <g
+         style="fill:#c798e2;fill-opacity:1"
+         transform="matrix(0.15098895,0,0,0.15098895,237.06204,477.94962)"
+         inkscape:label="Layer 1"
+         id="layer1-8">
+        <g
+           style="fill:#c798e2;fill-opacity:1"
+           id="g7616-4"
+           transform="translate(-122,44.000001)">
+          <g
+             style="fill:#c798e2;fill-opacity:1"
+             transform="matrix(1.1475092,0,0,1.1475092,87.661383,133.31054)"
+             id="g6888-8">
+            <g
+               style="fill:#c798e2;fill-opacity:1"
+               id="g6890-2"
+               enable-background="new    ">
+              <g
+                 style="fill:#c798e2;fill-opacity:1"
+                 id="g6892-8">
+                <polygon
+                   id="polygon6894-8"
+                   points="182.733,165.755 351.604,106.679 521.525,165.729 352.659,224.801 "
+                   stroke-miterlimit="10"
+                   style="fill:#c798e2;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-miterlimit:10" />
+              </g>
+              <g
+                 style="fill:#c798e2;fill-opacity:1"
+                 id="g6896-6">
+                <polygon
+                   id="polygon6898-9"
+                   points="351.754,465.079 352.659,224.801 521.525,165.729 520.626,405.996 "
+                   stroke-miterlimit="10"
+                   style="fill:#c798e2;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-miterlimit:10" />
+              </g>
+              <g
+                 style="fill:#c798e2;fill-opacity:1"
+                 id="g6900-5">
+                <polygon
+                   id="polygon6902-5"
+                   points="181.833,406.029 182.733,165.755 352.659,224.801 351.754,465.079 "
+                   stroke-miterlimit="10"
+                   style="fill:#c798e2;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-miterlimit:10" />
+              </g>
+            </g>
+          </g>
+          <g
+             style="fill:#c798e2;fill-opacity:1"
+             transform="matrix(5.3278657,0,0,5.3278657,-880.16742,-1005.5465)"
+             id="g7569-2">
+            <g
+               style="fill:#c798e2;fill-opacity:1"
+               id="g7554-67">
+              <ellipse
+                 ry="4.8945951"
+                 rx="5.0033641"
+                 cy="280.32138"
+                 cx="305.06479"
+                 id="path7550-6"
+                 style="opacity:1;fill:#c798e2;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 d="m 310.06815,280.32138 a 5.0033641,4.8945951 0 0 1 -5.00336,4.8946 5.0033641,4.8945951 0 0 1 -5.00337,-4.8946 5.0033641,4.8945951 0 0 1 5.00337,-4.89459 5.0033641,4.8945951 0 0 1 5.00336,4.89459 z" />
+              <path
+                 sodipodi:nodetypes="ccccc"
+                 inkscape:connector-curvature="0"
+                 id="path7552-5"
+                 d="m 300.375,281.73718 -9.0625,0 0,-3.3125 9.125,0 z"
+                 style="fill:#c798e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            </g>
+          </g>
+          <g
+             style="fill:#c798e2;fill-opacity:1"
+             id="g7554-6-7"
+             transform="matrix(-5.3278657,0,0,5.3278657,1855.3736,-1003.9971)">
+            <ellipse
+               style="opacity:1;fill:#c798e2;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               id="path7550-5-7"
+               cx="305.06479"
+               cy="280.32138"
+               rx="5.0033641"
+               ry="4.8945951"
+               d="m 310.06815,280.32138 a 5.0033641,4.8945951 0 0 1 -5.00336,4.8946 5.0033641,4.8945951 0 0 1 -5.00337,-4.8946 5.0033641,4.8945951 0 0 1 5.00337,-4.89459 5.0033641,4.8945951 0 0 1 5.00336,4.89459 z" />
+            <path
+               style="fill:#c798e2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m 300.375,281.73718 -9.0625,0 0,-3.3125 9.125,0 z"
+               id="path7552-2-8"
+               inkscape:connector-curvature="0"
+               sodipodi:nodetypes="ccccc" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="113.85313"
+       y="588.60089"
+       id="text4730-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7"
+         x="113.85313"
+         y="588.60089"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">CORE API</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="388.55194"
+       y="588.60089"
+       id="text4730-8-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-9"
+         x="388.55194"
+         y="588.60089"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">PLUGINS</tspan></text>
+    <rect
+       style="opacity:0.59839358;fill:#5f98e2;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3355-0"
+       width="168.3136"
+       height="59.524738"
+       x="661.78345"
+       y="839.36121"
+       rx="4.668983"
+       ry="4.0406103" />
+    <rect
+       style="opacity:0.59839358;fill:#5f98e2;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3355-8"
+       width="168.3136"
+       height="59.524738"
+       x="661.78345"
+       y="637.46686"
+       rx="4.668983"
+       ry="4.0406103" />
+    <rect
+       style="opacity:0.59839358;fill:#5f98e2;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3355-6"
+       width="168.3136"
+       height="59.524738"
+       x="661.78345"
+       y="728.58118"
+       rx="4.668983"
+       ry="4.0406103" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.4648819px;line-height:125%;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="220.69115"
+       y="516.19519"
+       id="text4730-8-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-5"
+         x="220.69115"
+         y="516.19519">SERVICE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.4648819px;line-height:125%;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="651.81964"
+       y="516.19519"
+       id="text4730-8-3-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-5-5"
+         x="651.81964"
+         y="516.19519">COMPUTE</tspan><tspan
+         sodipodi:role="line"
+         x="651.81964"
+         y="601.77631"
+         id="tspan4975" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="719.7431"
+       y="682.47418"
+       id="text4730-8-4-8-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-9-0-0"
+         x="719.7431"
+         y="682.47418"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">OVS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:68.4648819px;line-height:125%;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="667.29059"
+       y="575.26868"
+       id="text4730-8-3-8-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-5-5-5"
+         x="667.29059"
+         y="575.26868">AGENTS</tspan><tspan
+         sodipodi:role="line"
+         x="667.29059"
+         y="660.84979"
+         id="tspan4975-8" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="730.29443"
+       y="773.5885"
+       id="text4730-8-4-8-0-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-9-0-0-8"
+         x="730.29443"
+         y="773.5885"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">LB</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="808.75702"
+       y="-743.69708"
+       id="text4730-8-4-8-0-5-3"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,1,-1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-9-0-0-8-5"
+         x="808.75702"
+         y="-743.69708"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="694.56244"
+       y="882.74921"
+       id="text4730-8-4-8-0-5-33"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4732-7-9-0-0-8-3"
+         x="694.56244"
+         y="882.74921"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz">VENDOR</tspan></text>
+    <g
+       id="g5132">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4730-8-2"
+         y="653.30835"
+         x="78.578407"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="653.30835"
+           x="78.578407"
+           id="tspan4732-7-95"
+           sodipodi:role="line">- Create network</tspan><tspan
+           id="tspan5106"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="692.12964"
+           x="78.578407"
+           sodipodi:role="line">- Update network</tspan><tspan
+           id="tspan5110"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="730.95087"
+           x="78.578407"
+           sodipodi:role="line">- Delete network</tspan></text>
+      <text
+         transform="matrix(0,1,-1,0,0,0)"
+         sodipodi:linespacing="125%"
+         id="text4730-8-4-8-0-5-3-5"
+         y="-159.18538"
+         x="763.17175"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="-159.18538"
+           x="763.17175"
+           id="tspan4732-7-9-0-0-8-5-7"
+           sodipodi:role="line">...</tspan></text>
+    </g>
+    <g
+       transform="translate(274.46221,0)"
+       id="g5132-8">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4730-8-2-0"
+         y="653.30835"
+         x="78.578407"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="653.30835"
+           x="78.578407"
+           id="tspan4732-7-95-8"
+           sodipodi:role="line">- Create network</tspan><tspan
+           id="tspan5106-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="692.12964"
+           x="78.578407"
+           sodipodi:role="line">- Update network</tspan><tspan
+           id="tspan5110-6"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="730.95087"
+           x="78.578407"
+           sodipodi:role="line">- Delete network</tspan></text>
+      <text
+         transform="matrix(0,1,-1,0,0,0)"
+         sodipodi:linespacing="125%"
+         id="text4730-8-4-8-0-5-3-5-6"
+         y="-159.18538"
+         x="763.17175"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+           y="-159.18538"
+           x="763.17175"
+           id="tspan4732-7-9-0-0-8-5-7-5"
+           sodipodi:role="line">...</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4730-8-2-0-1"
+       y="952.33197"
+       x="353.16"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:43.55701065px;line-height:125%;font-family:Oranienbaum;-inkscape-font-specification:Oranienbaum;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan5110-6-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.05701065px;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+         y="952.33197"
+         x="353.16"
+         sodipodi:role="line">- Extensions</tspan></text>
+  </g>
+</svg>

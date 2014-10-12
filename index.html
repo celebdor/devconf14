@@ -42,6 +42,10 @@
                         <p>
                             <small>Created by <a href="http://blog.antoni.me">Antoni Segura Puimedon</a> / <a href="http://twitter.com/@celebdor">@celebdor</a></small>
                         </p>
+                        <aside class="notes">
+                            <p>They can ask whenever, but better at the end of the three parts</p>
+                        </aside>
+
 				</section>
 				<section>
                         <section>
@@ -83,6 +87,18 @@
                         </section>
                         <section>
                             <object type="image/svg+xml" data="svg_clean/openstack_arch.svg"></object>
+                        </section>
+                        <section>
+                            <h2>External providers</h2>
+                            <ul>
+                                <li>3rd party products that provide core entities:
+                                    <ul>
+                                        <li>Hosts</li>
+                                        <li>Network</li>
+                                        <li>Storage domains</li>
+                                    </ul>
+                                <li>Configure once, use everywhere</li>
+                                <li>Example providers...</li>
                         </section>
                         <section>
                             <object type="image/svg+xml" data="svg_clean/openstack_arch_selected.svg"></object>
@@ -203,6 +219,10 @@
                             </aside>
                         </section>
                         <section>
+                            <h2>Image exporting</h2>
+                            <img src="png/export_image_horizon.png"/>
+                        </section>
+                        <section>
                             <h2>Current limitations</h2>
                             <p>
                                 <ul>
@@ -232,336 +252,99 @@
                         </section>
 				</section>
 				<section>
-                                    <h2>Networking</h2>
-                                    <h3>Allowed configurations over physical device</h3>
-
-                                    <object type="image/svg+xml" data="svg_clean/vm_nets.svg" height="500em"></object>
-
-                                    <aside class="notes">
-                                        <p>Multiple bridged or bridgeless vlanned networks with a single bridge-less non vlanned network.</p>
-                                        <p>Single non-vlanned bridged network</p>
-                                    </aside>
-				</section>
-                                <section>
-                                    <section>
-                                        <h2>VDSM networking modules</h2>
-                                        <object type="image/svg+xml" data="svg_clean/modules.svg"></object>
-
-                                        <aside class="notes">
-                                            <p>Define setupNetworks path.</p>
-                                            <p>Define getCaps path.</p>
-                                            <p>Introduce configurators.</p>
-                                        </aside>
-                                    </section>
-                                    <section>
-                                        <object type="image/svg+xml" data="svg_clean/net_modules.svg" height="680em"></object>
-
-                                        <aside class="notes">
-                                            <p>explain library usage.</p>
-                                        </aside>
-                                    </section>
-                                </section>
+                        <section>
+                            <object type="image/svg+xml" data="svg_clean/neutron_logo.svg" height="400em"></object><h2>Network Service - Neutron</h2>
+                        </section>
+                        <section>
+                            <h2>Introduction</h2>
+                            <p>
+                                <ul>
+                                    <li>Networking as a service:
+                                        <ul>
+                                            <li>Layer 2</li>
+                                            <li>Layer 3</li>
+                                            <li>Load Balancing</li>
+                                            <li>Firewall</li>
+                                            <li>Tunneling</li>
+                                            <li>VPN</li>
+                                        </ul>
+                                    </li>
+                                    <li>RESTful API for metadata and image retrieval</li>
+                                    <li>Plugins:
+                                        <ul>
+                                            <li>Open vSwitch</li>
+                                            <li>Cisco UCS</li>
+                                            <li>Linux Bridge</li>
+                                            <li>Modular Layer 2</li>
+                                            <li>etc</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </p>
+                            <aside class="notes">
+                                <p>Note the size</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <h2>Architecture</h2>
+                            <object type="image/svg+xml" data="svg_clean/neutron_architecture.svg"></object>
+                        </section>
+                        <section>
+                            <h2>Advantages</h2>
+                            <ul>
+                                <li>Overlay networks</li>
+                                <li>IP address management</li>
+                                <li>Security groups</li>
+                                <li>L3-L7 services</li>
+                            </ul>
+                            <aside class="notes">
+                                <p>For overlay networks it offers vxlan and gre that are much wider and maintainable than vlans. SDN</p>
+                                <p>Segregate VM traffic from the outside with the right usage of rules</p>
+                                <p>For IPADM that allows you to get IP config on the VMs without trouble</p>
+                                <p>L3-L7: Load balancing, tunneling, VPN, etc</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <h2>Best of both worlds</h2>
+                            <h3>Host networking: oVirt</h3>
+                            <h3>VM networking: Neutron</h3>
+                        </section>
+                        <section>
+                            <h2>oVirt current use cases</h2>
+                            <p>
+                                <ul>
+                                    <li>Import/Export networks</li>
+                                    <li>Create subnets with IPAM</li>
+                                    <li>Attach vNics to ports</li>
+                                    <li>Overlay networks*</li>
+                                </ul>
+                            </p>
+                            <aside class="notes">
+                                <p>*Requires some extra steps linked in the end</p>
+                            </aside>
+                        </section>
+                        <section>
+                            <object type="image/svg+xml" data="svg_clean/oVirt_neutron_create_vnic.svg"></object>
+                            <aside class="notes">
+                                <p>Create vNic without sec groups</p>
+                            </aside>
+                        </section>
+                    </section>
 				<section>
-                                    <section>
-                                        <h2>VDSM networking API</h2>
-                                        <ul>
-                                            <li class="fragment" data-fragment-index="1">
-                                                <strong>Host networking</strong>
-                                                <ul>
-                                                    <li>setupNetworks<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span><span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
-                                                    <li>setSafeNetworkConfig<span class="fragment" data-fragment-index="4" style="color:green"> Configurators</span></li>
-                                                    <li>getVdsCapabilities</li>
-                                                </ul>
-                                            </li>
-                                            <li class="fragment" data-fragment-index="2">
-                                                <strong>VM networking</strong>
-                                                <ul>
-                                                    <li>hotplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                    <li>hotunplugNic<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                    <li>vmUpdateDevice<span class="fragment" data-fragment-index="3" style="color:red"> Hooks</span></li>
-                                                    <li>getVmStats</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>setupNetworks</h2>
-                                        <pre><code class="json">
-{'red': {'bonding': 'bond0', 'vlan': '3', 'STP': 'no', 'bridged': 'true'}},
-{'bond0': {'nics': ['eth2', 'eth1'], 'options': 'mode=4'} },
-{'connectivityCheck': 'true', 'connectivityTimeout': 120}
-                                        </code></pre>
-                                        <pre><code class="json">
-{'black': {'nic': 'eth3', 'vlan': '4', 'STP': 'no', 'bridged': 'true'},
- 'green': {'nic': 'eth3', 'vlan': '5', 'STP': 'no', 'bridged': 'true'}},
-{},
-{'connectivityCheck': 'true', 'connectivityTimeout': 120}
-                                        </code></pre>
-                                    </section>
-				</section>
-
-                                <!--Hooks section. Description and listing of the networking hook endpoints. EXAMPLES!!!-->
-                                <section>
-                                    <h2>Hooks</h2>
-                                    <ul>
-                                        <li>Scripts installed to /usr/libexec/vdsm/hooks/</li>
-                                        <li>Multiple scripts per hooking point (sorted by priority)</li>
-                                        <li>Can be written in any programming language (<strong>Python</strong>)</li>
-                                        <li>IO via environment variables and files</li>
-                                        <li>XML and JSON file interface</li>
-                                        <li>Placed before and after API calls to extend VDSM</li>
-                                    </ul>
-                                </section>
-
-                                <section>
-                                    <section>
-                                        <h2>Host networking Hooks</h2>
-                                        <ul>
-                                            <li>
-                                                <strong>before_network_setup</strong>
-                                                <ul>
-                                                    <li>Input: JSON of setupNetworks API command (nets and bonds definitions)</li>
-                                                    <li>Output: JSON dump of network and bonding definitions for setupNetworks to apply</li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <strong>after_network_setup</strong>
-                                                <ul>
-                                                    <li>Input: JSON of what was set for setupNetworks to apply</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Example that integrates with journald</h2>
-                                        <pre><code class="python">
-#!/usr/bin/env python
-from systemd import journal
-from vdsm import netinfo
-import json, os, sys
-
-with open(os.environ['_hook_json']) as data_file:
-    setup_nets_config = json.load(data_file)
-
-networks = netinfo.networks()  # Current nets
-for network, data in setup_nets_config['request']['networks'].items():
-    if 'remove' in data:
-        journal.send('VDSM to remove network %s' % network)
-    else:
-        journal.send('VDSM to configure network %s' % network,
-                     NEWNET=network in networks, DEF=str(data))
-                                        </code></pre>
-                                    </section>
-                                </section>
-                                <section>
-                                    <section>
-                                        <h2>VM networking Hooks</h2>
-                                        <ul>
-                                            <li> before_nic_hotplug </li>
-                                            <li> after_nic_hotplug </li>
-                                            <li> after_nic_hotplug_fail </li>
-                                            <p/>
-                                            <li> before_nic_hotunplug </li>
-                                            <li> after_nic_hotunplug </li>
-                                            <li> after_nic_hotunplug_fail </li>
-                                            <p/>
-                                            <li> before_device_create </li>
-                                            <li> after_device_create</li>
-                                            <p/>
-                                            <li> before_device_destroy </li>
-                                            <li> after_device_destroy</li>
-                                            <p/>
-                                            <li> before_update_device </li>
-                                            <li> after_update_device </li>
-                                            <li> after_update_device_fail </li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Example that overrides vnic net</h2>
-                                        <pre><code class="python">
-#!/usr/bin/env python
-import hooking, os, sys, xml.dom
-
-libvirt_net = os.environ.get('extnet')
-if libvirt_net is not None:
-    doc_xml = hooking.read_domxml()
-    vnic_xml, = doc_xml.getElementsByTagName('interface')
-
-    # Replace net from vnic xml
-    source, = vnic_xml.getElementsByTagName('source')
-    source.removeAttribute('bridge')
-    source.setAttribute('network', libvirt_net)
-    vnic_xml.setAttribute('type', 'network')
-
-    hooking.write_domxml(doc)  # Write back the xml for vdsm/libvirt
-                                        </code></pre>
-                                        <aside class="notes">
-                                            <p>This could be used in:</p>
-                                            <ul>
-                                                <li>before_device_create</li>
-                                                <li>before_nic_hotplug</li>
-                                            </ul>
-                                        </aside>
-                                    </section>
-                                    <section>
-                                        <h2>some shipped hooks</h2>
-                                        <ul>
-                                            <li>Cisco UCS vNIC</li>
-                                            <li>extnet</li>
-                                            <li>macspoofing filter removal</li>
-                                            <li>openstack nets for vNIC</li>
-                                            <li>Attach sriov to VMs</li>
-                                            <li>QoS (obsoleted by new API)</li>
-                                        </ul>
-                                    </section>
-                                </section>
-
-                                <section>
-                                    <section>
-                                        <h2>Configurators</h2>
-                                        <ul>
-                                            <li>Apply network configuration to the system</li>
-                                            <li>Operates on network device objects</li>
-                                            <li class="fragment" data-fragment-index="1">Advantages:
-                                                <ul>
-                                                    <li>Using different networking systems</li>
-                                                    <li>Supporting multiple distributions</li>
-                                                    <li>Controlling each step of the network configuration</li>
-                                                </ul>
-                                            </li>
-                                            <li class="fragment" data-fragment-index="2">Pain points:
-                                                <ul>
-                                                    <li>Each configurator can have different persistence semantics</li>
-                                                    <li>Dealing with transactions</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Mandatory API</h2>
-                                        <ul>
-                                            <li>begin</li>
-                                            <p/>
-                                            <li>configureBridge</li>
-                                            <li>configureBond</li>
-                                            <li>configureVlan</li>
-                                            <li>configureNic</li>
-                                            <li>configureSourceRoute</li>
-                                            <p/>
-                                            <li>editBonding</li>
-                                            <p/>
-                                            <li>removeBridge</li>
-                                            <li>removeBond</li>
-                                            <li>removeVlan</li>
-                                            <li>removeNic</li>
-                                            <li>removeSourceRoute</li>
-                                            <p/>
-                                            <li>flush</li>
-                                            <p/>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Optional API</h2>
-                                        <ul>
-                                            <li>configureLibvirtNetwork</li>
-                                            <li>removeLibvirtNetwork</li>
-                                            <p/>
-                                            <li>rollback</li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Configurator flow</h2>
-                                        <object type="image/svg+xml" data="svg_clean/configurator_call_flow.svg"></object>
-                                    </section>
-                                    <section>
-                                        <h2>configure Vlan example</h2>
-                                        <pre><code class="python">
-def configureVlan(self, vlan, **opts):
-    vlan.device.configure(**opts)
-    ipwrapper.linkAdd(name=vlan.name, linkType='vlan',
-                      link=vlan.device.name args=['id', str(vlan.tag)])
-    if vlan.ip:
-        ipwrapper.addrFlush(vlan.name)
-        ipwrapper.addrAdd(vlan.name, vlan.ipConfig.ipaddr,
-                          ipConfig.netmask)
-        if vlan.ipConfig.gateway and vlan.ipConfig.defaultRoute:
-            ipwrapper.routeAdd(['default', 'via', vlan.ipConfig.gateway])
-    if vlan.mtu:
-        ipwrapper.linkSet(vlan.name, ['mtu', str(mtu)])
-    ipwrapper.linkSet(vlan.name, ['up'])
-    if vlan.ipConfig.bootproto == 'dhcp':
-        DhcpClient(vlan.name).start(vlan.ipConfig.async)
-                                        </code></pre>
-                                    </section>
-                                    <section>
-                                        <h2>Shipped configurators</h2>
-                                        <ul>
-                                            <li>ifcfg (Fedora, el6)</li>
-                                            <li>iproute2</li>
-                                        </ul>
-                                    </section>
-                                </section>
-
-                                <section>
-                                    <section>
-                                        <h2>Unified persistence: Addressing Configurator pain points</h2>
-                                        <ul>
-                                            <li>Abstracts away the network configuration persistence</li>
-                                            <li>Deals with transactionality</li>
-                                            <li>File system based</li>
-                                            <li>One JSON file per each network and/or bond</li>
-                                            <li>Introduces:
-                                                <ul>
-                                                    <li>Running Configuration</li>
-                                                    <li>Persistent Configuration</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Running Configuration</h2>
-                                        <ul>
-                                            <li>On tmpfs: <strong>/var/run/vdsm/netconf/{nets,bonds}</strong></li>
-                                            <li>Exact vdsm network and bond state</li>
-                                            <li>Written on successful network operation</li>
-                                            <li>Can be persisted atomically by setSafeNetworkConfig</li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Persistent Configuration</h2>
-                                        <ul>
-                                            <li>On: <strong>/var/lib/vdsm/persistence/netconf/{nets,bonds}</strong></li>
-                                            <li>Configuration to roll back to when rebooting or restoring connectivity</li>
-                                            <li>netconf is a link to the latest snapshot copied from Running Configuration</li>
-                                            <li>Allows recovery from wrong configurations</li>
-                                        </ul>
-                                    </section>
-                                    <section>
-                                        <h2>Creation flow</h2>
-                                        <object type="image/svg+xml" data="svg_clean/unified_setupsafe_flow.svg"></object>
-                                    </section>
-                                    <section>
-                                        <h2>Reboot flow</h2>
-                                        <object type="image/svg+xml" data="svg_clean/unified_reboot_flow.svg"></object>
-                                    </section>
-                                    <section>
-                                        <h2>Restore flow</h2>
-                                        <object type="image/svg+xml" data="svg_clean/unified_restore_flow.svg"></object>
-                                    </section>
-                                </section>
-
-				<section>
-                                    <h2>Future work</h2>
-                                    <ul>
-                                        <li>Ask Danken in the next presentation</li>
-                                    </ul>
+                        <h2>More info</h2>
+                        <ul>
+                            <li>Glance integration deep dive - <a href="http://youtu.be/_Nyi1xyiQnY">http://youtu.be/_Nyi1xyiQnY</a></li>
+                            <li>Neutron integration deep dive - <a href="http://youtu.be/S16AfFylcHk">http://youtu.be/S16AfFylcHk</a></li>
+                            <li>Neutron appliance demo - <a href="http://youtu.be/naLFSFwHI94">http://youtu.be/naLFSFwHI94</a></li>
+                            <li><a href="http://www.ovirt.org/OVirt_Neutron_GRE_Integration_-_How_To">http://www.ovirt.org/OVirt_Neutron_GRE_Integration_-_How_To</a></li>
+                            <li><a href="http://www.ovirt.org/Features/NeutronVirtualAppliance">http://www.ovirt.org/Features/NeutronVirtualAppliance</a></li>
+                        </ul>
 				</section>
                                 <!--The end-->
 				<section>
                                     <h2>Questions</h2>
                                     <object type="image/svg+xml" data="svg_clean/oVirt_logo.svg" height="200em"></object>
-                                    <h3><a href="http://gerrit.ovirt.org/#/q/project:vdsm,n,z">http://gerrit.ovirt.org/#/q/project:vdsm,n,z</a></h3>
-                                    <h3>apuimedo/celebdor @ #vdsm@irc.freenode.net</h3>
+                                    <h3>apuimedo/celebdor @ #ovirt@irc.oftc.net</h3>
 				</section>
 
 			</div>
